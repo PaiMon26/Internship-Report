@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-This worklog records the 12-week internship journey, starting from getting familiar with AWS and its core services such as IAM, VPC, EC2, S3, CloudFront, Cognito, PostgreSQL, DynamoDB, ECR, ALB, and CloudWatch. Alongside the service learning process, each week also included project discussions to refine requirements and gradually finalize the scope of **LunchSync**.
-
-The final four weeks focused on infrastructure design, authentication implementation, system integration, testing, and report completion.
-
 **Week 1:** [Getting familiar with AWS and basic IAM](1.1-week1/)
 
 **Week 2:** [Learning VPC, Hugo, and defining the project direction](1.2-week2/)
@@ -32,4 +28,6 @@ The final four weeks focused on infrastructure design, authentication implementa
 
 **Week 11:** [System integration, CloudWatch, and FCAJ Community Day](1.11-week11/)
 
-**Week 12:** [Testing, report completion, and project finalization](1.12-week12/)
+**Week 12:** [Testing, bug fixing, and MVP finalization](1.12-week12/)
+
+**Week 13:** [Report finalization, demo, and project wrap-up](1.13-week13/)

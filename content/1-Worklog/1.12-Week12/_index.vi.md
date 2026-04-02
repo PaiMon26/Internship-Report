@@ -8,22 +8,22 @@ pre: " <b> 1.12. </b> "
 
 ### Mục tiêu tuần 12:
 
-* Hoàn thiện dự án ở mức MVP.
-* Hoàn tất kiểm thử, sửa lỗi và tổng hợp phần việc đã triển khai.
-* Hoàn thành báo cáo thực tập và chuẩn bị nội dung demo.
+* Hoàn thiện MVP và ổn định hệ thống trước giai đoạn tổng kết.
+* Thực hiện kiểm thử tổng thể, xử lý lỗi phát sinh và rà soát lại các chức năng chính.
+* Hoàn thiện báo cáo thực tập và chuẩn bị nội dung demo.
 
 ### Các công việc triển khai trong tuần:
 
 | Thứ | Công việc |
 | --- | --- |
-| 2 (23/03) | - Kiểm thử end-to-end <br> - Rà lại các lỗi còn tồn đọng |
-| 3 (24/03) | - Sửa lỗi <br> - Hoàn thiện thêm phần authentication và hỗ trợ tích hợp |
-| 4 (25/03) | - Hoàn thành nội dung báo cáo <br> - Bổ sung hình ảnh và minh họa |
-| 5 (26/03) | - Chuẩn bị demo <br> - Review lại toàn bộ hệ thống |
-| 6 (27/03) | - Hoàn thiện MVP <br> - Chốt tài liệu và các hạng mục bàn giao |
+| 2 (23/03) | - Kiểm thử end-to-end <br> - Rà soát các luồng chính của hệ thống |
+| 3 (24/03) | - Sửa lỗi phát sinh sau kiểm thử <br> - Tinh chỉnh lại các chức năng trọng tâm |
+| 4 (25/03) | - Hoàn thiện nội dung báo cáo <br> - Bổ sung hình ảnh minh họa và mô tả kỹ thuật |
+| 5 (26/03) | - Chuẩn bị kịch bản demo <br> - Review lại các hạng mục cần bàn giao |
+| 6 (27/03) | - Hoàn thiện MVP <br> - Chốt tài liệu và phiên bản trình bày |
 
 ### Kết quả đạt được tuần 12:
 
-* Hoàn thành MVP của dự án LunchSync.
-* Hoàn tất báo cáo thực tập.
-* Sẵn sàng cho việc demo và tổng kết dự án.
+* Hoàn thiện MVP của dự án LunchSync.
+* Hệ thống ổn định hơn sau quá trình kiểm thử và sửa lỗi.
+* Hoàn tất báo cáo và sẵn sàng cho giai đoạn demo.

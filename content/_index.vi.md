@@ -13,7 +13,7 @@ chapter: false
 
 &emsp; **MSSV:** SE190902
 
-&emsp; **Số điện thoại:** 0869 552 305
+&emsp; **Số điện thoại:** 0865 952 305
 
 &emsp; **Email:** tranthiminhanh2610@gmail.com
 

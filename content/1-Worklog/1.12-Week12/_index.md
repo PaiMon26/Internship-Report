@@ -8,22 +8,22 @@ pre: " <b> 1.12. </b> "
 
 ### Week 12 Objectives:
 
-* Finalize the project at the MVP level.
-* Complete testing, bug fixing, and consolidation of the implemented work.
-* Finish the internship report and prepare demo materials.
+* Finalize the MVP and stabilize the system before the wrap-up phase.
+* Carry out end-to-end testing, fix issues, and review the main workflows.
+* Complete the internship report and prepare the demo materials.
 
 ### Tasks carried out during the week:
 
 | Day | Task |
 | --- | --- |
-| Mon (Mar 23) | - Perform end-to-end testing <br> - Review remaining issues |
-| Tue (Mar 24) | - Fix bugs <br> - Refine the authentication module and support integration |
-| Wed (Mar 25) | - Complete the report content <br> - Add screenshots and illustrations |
-| Thu (Mar 26) | - Prepare the demo <br> - Review the full system |
-| Fri (Mar 27) | - Finalize the MVP <br> - Confirm documentation and handoff items |
+| Mon (Mar 23) | - Perform end-to-end testing <br> - Review the system's main flows |
+| Tue (Mar 24) | - Fix issues found during testing <br> - Refine the core features |
+| Wed (Mar 25) | - Complete the report content <br> - Add visuals and technical descriptions |
+| Thu (Mar 26) | - Prepare the demo script <br> - Review the handoff items |
+| Fri (Mar 27) | - Finalize the MVP <br> - Confirm the presentation version and documentation |
 
 ### Week 12 Achievements:
 
-* Completed the MVP of LunchSync.
-* Finished the internship report.
-* Became ready for the demo and project wrap-up.
+* Finalized the MVP of LunchSync.
+* Improved system stability through testing and bug fixing.
+* Completed the report and became ready for the demo phase.
