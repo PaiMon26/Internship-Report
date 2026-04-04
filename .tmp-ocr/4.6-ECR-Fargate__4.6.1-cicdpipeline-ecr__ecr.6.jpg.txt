@@ -1,0 +1,1 @@
+﻿Confirm configuration update Adding rule "rulepriority" "description" • "Xöa untagged images saulngäy" "selection": { "tagStatus" : "untagged" , "count Type" • "sincelmagepushed" , "countUnit": "days", "countNumber": I "action" : "type" • "expire" Updated configuration

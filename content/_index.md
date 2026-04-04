@@ -19,9 +19,7 @@ chapter: false
 
 &emsp; **University:** FPT University
 
-&emsp; **Major:** Information Security
-
-&emsp; **Class:** AWS012026
+&emsp; **Major:** Information Assurance
 
 &emsp; **Internship Company:** Bootcamp - First Cloud AI Journey @ AWS Study Group
 

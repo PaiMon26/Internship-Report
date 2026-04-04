@@ -1,0 +1,1 @@
+﻿(I) Info Identity providers Use an identity provider ('dp) to manage your user identities outside of AWS, but grant the user identities permissions to Delete Creation time Now Add provider use AWS resources in your account. Q Search Group name C) token-actions. q ith ubusercontent.cor Filter by Type All Types Type OpenID Connect

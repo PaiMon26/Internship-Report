@@ -21,8 +21,6 @@ chapter: false
 
 &emsp; **Chuyên ngành:** An toàn thông tin
 
-&emsp; **Lớp:** AWS012026
-
 &emsp; **Công ty thực tập:** Bootcamp - First Cloud AI Journey @ AWS Study Group
 
 &emsp; **Vị trí thực tập:** FCJ Cloud Intern

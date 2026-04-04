@@ -1,0 +1,1 @@
+﻿Add a return URL - optional Choose a return URL Cognito redirects to this URL after successful sign-in with the managed login pages on your user pool domain. Your application can then process the resulting tokens. c r Valid HTTPS Return URL https://lunchsync_space/ The length of the URL must be 1 and 1024 ha a rwmbers, and Cognito HTTP mpt fM http:/ t%ting App return URLs Cancel

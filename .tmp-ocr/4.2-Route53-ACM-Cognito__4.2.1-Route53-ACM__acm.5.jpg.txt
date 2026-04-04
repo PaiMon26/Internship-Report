@@ -1,0 +1,1 @@
+﻿(2/2) Create DNS records in Amazon Route 53 Q Search domains Validation status = Pending validation Domain lunchsync.space •.lunchsync.space X Validation status = Failed Validation status @ Pending validation @ Pending validation X 2 matches Is domain in Route 53? = Yes Is domain in Route 53? x Clear filters Cancel records
