@@ -1,6 +1,6 @@
 ---
 title: "Các events đã tham gia"
-date: 2024-01-01
+date: 2026-04-04
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
@@ -40,20 +40,10 @@ Trong suốt quá trình thực tập, việc tham gia các sự kiện chuyên 
 
 ### [Event 4](3.4-Event4/)
 
-&emsp;**Tên sự kiện:** Sẽ cập nhật khi sự kiện diễn ra
+&emsp;**Tên sự kiện:** Cloud Native & Infrastructure - Kubernetes, Elixir & IaC
 
-&emsp;**Thời gian:** 09:00 - Chưa cập nhật ngày tổ chức
+&emsp;**Thời gian:** 09:00 ngày 04/04/2026
 
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
-
-&emsp;**Vai trò trong sự kiện:** Người tham dự
-
-### [Event 5](3.5-Event5/)
-
-&emsp;**Tên sự kiện:** Sẽ cập nhật khi sự kiện diễn ra
-
-&emsp;**Thời gian:** 09:00 - Chưa cập nhật ngày tổ chức
-
-&emsp;**Địa điểm:** Tầng 26, tòa nhà Bitexco, số 02 đường Hải Triều, phường Sài Gòn, thành phố Hồ Chí Minh
+&emsp;**Địa điểm:** Lô E2a-7, Đường D1, Khu Công nghệ cao, Phường Tăng Nhơn Phú, TP. Hồ Chí Minh
 
 &emsp;**Vai trò trong sự kiện:** Người tham dự

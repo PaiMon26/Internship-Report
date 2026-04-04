@@ -1,6 +1,6 @@
 ---
 title: "Events Participated"
-date: 2024-01-01
+date: 2026-04-04
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
@@ -46,22 +46,12 @@ Throughout the internship, participating in professional events created opportun
 
 ### [Event 4](3.4-Event4/)
 
-&emsp;**Event Name:** To be updated when the event takes place
+&emsp;**Event Name:** Cloud Native & Infrastructure - Kubernetes, Elixir & IaC
 
-&emsp;**Date & Time:** 09:00, date to be updated
+&emsp;**Date & Time:** 09:00, April 4, 2026
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
+&emsp;**Location:** Lot E2a-7, D1 Street, Saigon Hi-Tech Park, Tang Nhon Phu Ward, Ho Chi Minh City
 
 &emsp;**Role:** Attendee
 
 ---
-
-### [Event 5](3.5-Event5/)
-
-&emsp;**Event Name:** To be updated when the event takes place
-
-&emsp;**Date & Time:** 09:00, date to be updated
-
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
-
-&emsp;**Role:** Attendee

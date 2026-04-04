@@ -3,7 +3,7 @@ title: "Event 3"
 date: 2026-03-21
 weight: 3
 chapter: false
-pre: " <b> 4.3. </b> "
+pre: " <b> 3.3. </b> "
 ---
 
 # Summary Report: "FCAJ Community Day"
