@@ -1,6 +1,6 @@
 baseURL = "https://paimon26.github.io/Internship-Report/"
-relativeURLs = false
-canonifyURLs = true
+relativeURLs = true
+canonifyURLs = false
 defaultContentLanguage = "en"
 
 # Change the default theme to be use when building the site with Hugo
