@@ -3,130 +3,234 @@ title: "Event 4"
 date: 2024-01-01
 weight: 4
 chapter: false
-pre: " <b> 4.1. </b> "
+pre: " <b> 4.4. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
-
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+# Summary Report: "Cloud Native & Infrastructure - Kubernetes, Elixir & IaC"
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Introduce foundational technologies in modern cloud-native systems
+- Provide knowledge about Kubernetes, DevOps, and Infrastructure as Code
+- Share design thinking for resilient and scalable systems
+- Help attendees better understand how production systems are operated
 
 ### Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **Bao Huynh** - Junior Cloud Native Developer, Endava Vietnam; Founder / Head Lab, ITea Lab
+- **Nguyen Ta Minh Triet** - R&D Member at ITea Lab, Swinburne Vietnam; SAP Developer Intern, Bosch GSV
+- **Thinh Nguyen** - FCAJ Cloud Engineer Trainee
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### 1. Kubernetes and Amazon EKS
 
-- Long product release cycles → Lost revenue/missed opportunities
-- Inefficient operations → Reduced productivity, higher costs
-- Non-compliance with security regulations → Security breaches, loss of reputation
+**What is Kubernetes**
 
-#### Transitioning to modern application architecture – Microservices
+- Kubernetes is a container orchestration system
+- Supports application deployment
+- Supports scaling
+- Supports self-healing
+- Supports load balancing
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+Kubernetes can be viewed as an "operating system for distributed systems".
 
-- **Queue Management**: Handle asynchronous tasks
-- **Caching Strategy**: Optimize performance
-- **Message Handling**: Flexible inter-service communication
+**Amazon EKS**
 
-#### Domain-Driven Design (DDD)
+- EKS is AWS managed Kubernetes service
+- AWS manages the control plane such as the API server, etcd, and high availability
+- Users manage worker nodes, applications, and runtime workloads
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts
-- **Bookstore case study**: Demonstrates real-world DDD application
-- **Context mapping**: 7 patterns for integrating bounded contexts
+**Why use EKS**
 
-#### Event-Driven Architecture
+- Reduces Kubernetes setup and operations effort
+- Integrates well with the AWS ecosystem
+- Makes production deployment faster
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming
-- **Benefits**: Loose coupling, scalability, resilience
-- **Sync vs async comparison**: Understanding the trade-offs
+**Why still use vanilla Kubernetes**
 
-#### Compute Evolution
+- Avoid vendor lock-in
+- Support multi-cloud strategies
+- Allow deeper customization of networking, scheduling, and cluster behavior
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria for appropriate choice
+**High-level EKS architecture**
 
-#### Amazon Q Developer
+- Control plane is managed by AWS
+- Worker nodes run on EC2 or Fargate
+- Networking is built on VPC
+- Load balancing integrates with ALB or NLB
 
-- **SDLC automation**: From planning to maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+**Main insight**
 
-### Key Takeaways
+- EKS simplifies operations and speeds up deployment
+- Vanilla Kubernetes offers more flexibility and control
+- The key is not choosing the "best" tool, but choosing the right trade-off for the system
 
-#### Design Mindset
+#### 2. Elixir, BEAM, and Fault Tolerance
 
-- **Business-first approach**: Always start from the business domain, not the technology
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams
-- **Bounded contexts**: Identifying and managing complexity in large systems
+**Elixir and BEAM**
 
-#### Technical Architecture
+- Elixir is a functional programming language
+- It runs on BEAM, the Erlang virtual machine
 
-- **Event storming technique**: Practical method for modeling business processes
-- Use **event-driven communication** instead of synchronous calls
-- **Integration patterns**: When to use sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless
+**Process model**
 
-#### Modernization Strategy
+- Uses lightweight processes
+- Does not share memory
+- Communicates through message passing
 
-- **Phased approach**: No rushing — follow a clear roadmap
-- **7Rs framework**: Multiple modernization paths depending on the application
-- **ROI measurement**: Cost reduction + business agility
+Benefits:
 
-### Applying to Work
+- No locking required
+- Reduced race conditions
+- Good scalability for concurrent systems
 
-- **Apply DDD** to current projects: Event storming sessions with business teams
-- **Refactor microservices**: Use bounded contexts to define service boundaries
-- **Implement event-driven patterns**: Replace some sync calls with async messaging
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity
+**Fault tolerance**
+
+- The core philosophy is "Let it crash"
+- Instead of handling every possible error, the system allows failures and recovers automatically
+
+**OTP**
+
+- Provides supervisor trees
+- Provides GenServer
+- Provides restart strategies
+
+This helps systems recover automatically when failures occur.
+
+**Process supervision**
+
+- Workers perform tasks
+- Supervisors monitor workers
+- If a worker fails, the supervisor can restart it automatically
+
+**Hot code upgrade**
+
+- Elixir supports updating code without downtime
+- In modern environments this is often combined with rolling updates or blue-green deployment on Kubernetes
+
+**DevOps and Elixir**
+
+Tools mentioned in the event:
+
+- Mix for builds
+- Hex for packages
+- ExUnit for testing
+- Observer for monitoring
+
+**Main insight**
+
+- Systems should not focus only on preventing failure, but on recovering well from failure
+- Compared with traditional defensive programming, Elixir follows a resilience-first mindset
+
+#### 3. Infrastructure as Code
+
+**What is IaC**
+
+- Infrastructure as Code means managing infrastructure through code instead of manual operations
+
+Benefits:
+
+- Automation
+- Reproducibility
+- Version control
+
+**Terraform**
+
+- Supports multi-cloud environments
+- Uses a declarative model to define the desired state
+
+Typical basic structure:
+
+- `main.tf`
+- `variables.tf`
+- `outputs.tf`
+- `providers.tf`
+
+Advanced structure may include:
+
+- `modules` for reuse
+- `environment` such as dev, staging, and prod
+- `bootstrap` for initial setup
+
+**AWS CloudFormation**
+
+- AWS native IaC tool
+- Uses YAML or JSON
+- Also follows a declarative model
+
+**AWS CDK**
+
+- Lets engineers define infrastructure using code such as TypeScript or Python
+- Follows the App -> Stack -> Construct model
+
+**CDK vs Terraform**
+
+- CDK is developer-friendly and AWS-focused
+- Terraform is strong for multi-cloud and has a broad ecosystem
+
+**LocalStack**
+
+- Simulates AWS services locally
+- Helps test systems without large cloud cost
+
+**Main insight**
+
+- The tool itself is not the most important factor
+- Structure, conventions, and discipline in implementation matter more
+
+### What I Learned
+
+#### Technology Mindset
+
+- Better understood how modern cloud-native systems are designed
+- Recognized the importance of trade-offs when choosing technologies
+- Gained a clearer resilience-first mindset for system design
+
+#### Technical Knowledge
+
+Became familiar with:
+
+- Kubernetes and Amazon EKS
+- Fault-tolerant systems with Elixir and BEAM
+- Infrastructure as Code
+
+Gained a basic understanding of how to:
+
+- Deploy and operate production systems
+- Manage infrastructure through code
+
+#### Applying to Work
+
+Can apply:
+
+- IaC thinking in system management
+- Container deployment concepts on cloud platforms
+
+In the future:
+
+- Build more scalable systems
+- Apply Kubernetes and DevOps pipelines to real projects
 
 ### Event Experience
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+This event helped me explore several core technologies in modern cloud-native systems such as Kubernetes, Elixir, and Infrastructure as Code. The topics were presented clearly and gave me a better understanding of how production systems are designed, deployed, and operated in practice.
 
-#### Learning from highly skilled speakers
+The EKS and IaC sections were especially useful because they provided practical perspectives on cloud infrastructure deployment. The Elixir and BEAM discussion also expanded my understanding of fault tolerance and system self-recovery.
 
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.
+However, because some topics were quite advanced, I mainly absorbed them at a high level and will need more time for deeper study.
 
-#### Hands-on technical exposure
+### Lessons Learned
 
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.
+- There is no single best technology for every case, only the right choice for the system trade-off
+- Modern systems should be designed to tolerate failure and recover automatically
+- Infrastructure should be managed as code for automation and reuse
+- Kubernetes, DevOps, and cloud-native practices are important foundations in large systems
 
-#### Leveraging modern tools
+### Some Event Photos
 
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.
+![Event photo 1](/images/events/event4_1.jpg)
 
-#### Networking and discussions
+![Event photo 2](/images/events/event4_2.jpg)
 
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.
-
-#### Lessons learned
-
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.
-
-#### Some event photos
-
-_Add your event photos here_
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+![Event photo 3](/images/events/event4_3.jpg)

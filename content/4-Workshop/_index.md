@@ -5,27 +5,28 @@ weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Secure Hybrid Access to S3 using VPC Endpoints
+# AWS Workshop Series
 
 #### Overview
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+This section provides an end-to-end deployment guide for the **LunchSync** system on AWS, based on the actual architecture used in the project. It covers DNS and SSL/TLS setup, VPC networking, load balancing, authentication, static content delivery, relational database provisioning, and caching.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+The flow follows the real deployment order: domain and certificate preparation first, networking and security setup next, then authentication and data layers to make the cloud environment production-ready.
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+- **Route53 and ACM** to prepare domain and certificate resources
+- **VPC, Security Group, and ALB** to build the networking path for the application
+- **Cognito** to prepare authentication resources
+- **S3 and CloudFront** to publish static content securely
+- **RDS** to provision the relational database layer
+- **Redis** to add caching support for the application
 
 #### Content
 
-1. [Workshop overview](4.1-Workshop-overview)
-2. [Prerequiste](4.2-Prerequiste/)
-3. [Access S3 from VPC](4.3-S3-vpc/)
-4. [Access S3 from On-premises](4.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](4.5-Policy/)
-6. [Clean up](4.6-Cleanup/)
+1. [Workshop overview](4.1-Workshop-overview/)
+2. [Route53 and ACM](4.2-Route53-ACM/)
+3. [VPC, Security Group, and ALB](4.3-VPC-SecurityGroup-ALB/)
+4. [Cognito](4.4-Cognito/)
+5. [S3 and CloudFront](4.5-S3-CloudFront/)
+6. [RDS](4.6-RDS/)
+7. [Redis](4.7-Redis/)
