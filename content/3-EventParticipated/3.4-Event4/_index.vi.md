@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 3.4. </b> "
 ---
 
-# Bài thu hoạch "Cloud Native & Infrastructure - Kubernetes, Elixir & IaC"
+# Bài thu hoạch "Cloud Mastery 2026 - Devops"
 
 ### Mục Đích Của Sự Kiện
 
@@ -214,11 +214,11 @@ Trong tương lai:
 
 ### Trải nghiệm trong event
 
-Sự kiện giúp em tiếp cận với nhiều công nghệ nền tảng trong hệ thống cloud-native như Kubernetes, Elixir và Infrastructure as Code. Các nội dung được trình bày rõ ràng, giúp em hiểu hơn về cách các hệ thống production được thiết kế, triển khai và vận hành trong thực tế.
+Sự kiện mang lại cơ hội tiếp cận với nhiều công nghệ nền tảng trong hệ thống cloud-native như Kubernetes, Elixir và Infrastructure as Code. Các nội dung được trình bày rõ ràng, giúp làm rõ hơn cách các hệ thống production được thiết kế, triển khai và vận hành trong thực tế.
 
 Phần chia sẻ về EKS và IaC đặc biệt hữu ích vì mang lại góc nhìn thực tiễn về việc triển khai hạ tầng trên cloud. Nội dung về Elixir và BEAM cũng mở rộng thêm cách nhìn về fault-tolerance và khả năng tự phục hồi của hệ thống.
 
-Tuy nhiên, do một số nội dung mang tính chuyên sâu, em chủ yếu tiếp cận ở mức tổng quan và cần tìm hiểu thêm để hiểu sâu hơn về các công nghệ này.
+Tuy nhiên, do một số nội dung mang tính chuyên sâu, phần lớn kiến thức được tiếp cận ở mức tổng quan và cần tìm hiểu thêm để hiểu sâu hơn về các công nghệ này.
 
 ### Bài học rút ra
 

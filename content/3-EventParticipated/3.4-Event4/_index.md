@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 3.4. </b> "
 ---
 
-# Summary Report: "Cloud Native & Infrastructure - Kubernetes, Elixir & IaC"
+# Summary Report: "Cloud Mastery 2026 - Devops"
 
 ### Event Objectives
 
@@ -179,13 +179,13 @@ Advanced structure may include:
 - The tool itself is not the most important factor
 - Structure, conventions, and discipline in implementation matter more
 
-### What I Learned
+### Key Learnings
 
 #### Technology Mindset
 
-- Better understood how modern cloud-native systems are designed
+- Gained a clearer understanding of how modern cloud-native systems are designed
 - Recognized the importance of trade-offs when choosing technologies
-- Gained a clearer resilience-first mindset for system design
+- Developed a clearer resilience-first mindset for system design
 
 #### Technical Knowledge
 
@@ -195,14 +195,14 @@ Became familiar with:
 - Fault-tolerant systems with Elixir and BEAM
 - Infrastructure as Code
 
-Gained a basic understanding of how to:
+A basic understanding was gained of how to:
 
 - Deploy and operate production systems
 - Manage infrastructure through code
 
 #### Applying to Work
 
-Can apply:
+Possible applications:
 
 - IaC thinking in system management
 - Container deployment concepts on cloud platforms
@@ -214,11 +214,11 @@ In the future:
 
 ### Event Experience
 
-This event helped me explore several core technologies in modern cloud-native systems such as Kubernetes, Elixir, and Infrastructure as Code. The topics were presented clearly and gave me a better understanding of how production systems are designed, deployed, and operated in practice.
+This event provided exposure to several core technologies in modern cloud-native systems such as Kubernetes, Elixir, and Infrastructure as Code. The topics were presented clearly and helped clarify how production systems are designed, deployed, and operated in practice.
 
-The EKS and IaC sections were especially useful because they provided practical perspectives on cloud infrastructure deployment. The Elixir and BEAM discussion also expanded my understanding of fault tolerance and system self-recovery.
+The EKS and IaC sections were especially useful because they provided practical perspectives on cloud infrastructure deployment. The Elixir and BEAM discussion also broadened the view of fault tolerance and system self-recovery.
 
-However, because some topics were quite advanced, I mainly absorbed them at a high level and will need more time for deeper study.
+However, because some topics were quite advanced, much of the content was absorbed at a high level and would require more time for deeper study.
 
 ### Lessons Learned
 
