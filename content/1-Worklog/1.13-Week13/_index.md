@@ -21,9 +21,11 @@ pre: " <b> 1.13. </b> "
 | Wed (Apr 1) | - Present the product demo <br> - Record feedback for the final revision |
 | Thu (Apr 2) | - Review the report and the system <br> - Apply the final adjustments |
 | Fri (Apr 3) | - Submit the report <br> - Finalize the wrap-up materials |
+| Sat (Apr 4) | - Attend the Cloud Mastery 2026 - Devops event <br> - Consolidate additional knowledge on Kubernetes, Elixir, and Infrastructure as Code |
 
 ### Week 13 Achievements:
 
 * Completed the internship report.
 * Finalized the MVP and completed the product demo.
 * Finished the wrap-up deliverables and submission materials.
+* Attended the Cloud Mastery 2026 - Devops event and gained additional knowledge on cloud-native systems, DevOps, and IaC.
