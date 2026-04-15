@@ -47,3 +47,13 @@ Trong suốt quá trình thực tập, việc tham gia các sự kiện chuyên 
 &emsp;**Địa điểm:** Lô E2a-7, Đường D1, Khu Công nghệ cao, Phường Tăng Nhơn Phú, TP. Hồ Chí Minh
 
 &emsp;**Vai trò trong sự kiện:** Người tham dự
+
+### [Event 5](3.5-Event5/)
+
+&emsp;**Tên sự kiện:** Cloud Mastery 2026 - Security
+
+&emsp;**Thời gian:** 09:00 ngày 11/04/2026
+
+&emsp;**Địa điểm:** Lô E2a-7, Đường D1, Khu Công nghệ cao, Phường Tăng Nhơn Phú, TP. Hồ Chí Minh
+
+&emsp;**Vai trò trong sự kiện:** Người tham dự

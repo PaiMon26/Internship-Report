@@ -208,7 +208,7 @@ Major trends:
 - Multi-agent orchestration
 - LLMs as the core engine of the system
 
-### What I Learned
+### Key Learnings
 
 #### Technology Mindset
 

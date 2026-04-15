@@ -151,7 +151,7 @@ The AI stack includes:
 - Memory
 - Orchestration
 
-### What I Learned
+### Key Learnings
 
 #### Technology Mindset
 

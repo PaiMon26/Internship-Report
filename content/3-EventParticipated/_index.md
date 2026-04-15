@@ -55,3 +55,15 @@ Throughout the internship, participating in professional events created opportun
 &emsp;**Role:** Attendee
 
 ---
+
+### [Event 5](3.5-Event5/)
+
+&emsp;**Event Name:** Cloud Mastery 2026 - Security
+
+&emsp;**Date & Time:** 09:00, April 11, 2026
+
+&emsp;**Location:** Lot E2a-7, D1 Street, Saigon Hi-Tech Park, Tang Nhon Phu Ward, Ho Chi Minh City
+
+&emsp;**Role:** Attendee
+
+---

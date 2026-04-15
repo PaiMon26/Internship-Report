@@ -316,7 +316,7 @@ The event provided a clearer view of how DevOps can be combined with AI to build
 
 Because some topics were highly advanced, much of the content was absorbed at a general level and would require further study for deeper understanding.
 
-### Lessons Learned
+### Key Learnings
 
 - DevOps is evolving into GenAIOps in the AI era
 - AI systems need complete pipelines just like software systems
