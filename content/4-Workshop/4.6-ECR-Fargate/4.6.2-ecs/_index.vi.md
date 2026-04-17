@@ -14,116 +14,105 @@ Mục này trình bày các bước cấu hình **IAM**, **ECS** và **Task Defi
 
 1. Mở **IAM > Roles** để chuẩn bị các role cho ECS.
 
-![IAM bước 1](iam.1.jpg)
+![IAM bước 1](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/iam.1.jpg)
 
 2. Tạo role mới với trusted entity là **AWS service**, service là **Elastic Container Service** và use case **Elastic Container Service Task**.
 
-![IAM bước 2](iam.2.jpg)
+![IAM bước 2](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/iam.2.jpg)
 
-3. Đặt tên role là `lunchsync-ecs-task-role` để dùng làm **task role** cho container backend.
+3. Đặt tên role là `lunchsync-ecs-task-role` để dùng làm **task role** cho container backend và không add permissions.
 
-![IAM bước 3](iam.3.jpg)
+![IAM bước 3](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/iam.3.jpg)
+![IAM bước 4](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/iam.4.jpg)
 
-4. Sau khi role được tạo, mở lại `lunchsync-ecs-task-role` để thêm quyền đọc secrets.
+4. Tạo role thứ hai cho **execution role**, ở bước Add permissions chọn policy managed `AmazonECSTaskExecutionRolePolicy`.
 
-![IAM bước 4](iam.4.jpg)
+![IAM bước 7](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/iam.7.jpg)
 
-5. Tạo inline policy cho task role, cho phép `secretsmanager:GetSecretValue` và `DescribeSecret` trên các secret của `db`, `redis` và `cognito`.
+5. Thêm inline policy cho execution role để ECS agent cũng có thể đọc các secret cần inject vào container khi task khởi động.
 
-![IAM bước 5](iam.5.jpg)
+![IAM bước 8](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/iam.8.jpg)
 
-6. Kiểm tra lại `lunchsync-ecs-task-role` để xác nhận inline policy đọc secrets đã được attach.
+6. Kiểm tra lại role `lunchsync-ecs-execution-role` để chắc rằng nó có cả `AmazonECSTaskExecutionRolePolicy` và policy đọc secret.
 
-![IAM bước 6](iam.6.jpg)
+![IAM bước 9](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/iam.9.jpg)
 
-7. Tạo role thứ hai cho **execution role**, ở bước Add permissions chọn policy managed `AmazonECSTaskExecutionRolePolicy`.
+7. Mở **Amazon ECS** và vào mục **Clusters**.
 
-![IAM bước 7](iam.7.jpg)
+![ECS bước 1](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.1.jpg)
 
-8. Thêm inline policy cho execution role để ECS agent cũng có thể đọc các secret cần inject vào container khi task khởi động.
+8. Tạo cluster mới tên `lunchsync-cluster`, chọn hạ tầng **Fargate only**.
 
-![IAM bước 8](iam.8.jpg)
+![ECS bước 2](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.2.jpg)
 
-9. Kiểm tra lại role `lunchsync-ecs-execution-role` để chắc rằng nó có cả `AmazonECSTaskExecutionRolePolicy` và policy đọc secret.
+9. Nếu cần, cấu hình thêm phần observability, **Container Insights** và **ECS Exec** theo mức theo dõi mong muốn.
 
-![IAM bước 9](iam.9.jpg)
+![ECS bước 3](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.3.jpg)
 
-10. Mở **Amazon ECS** và vào mục **Clusters**.
+10. Hoàn tất tạo cluster.
 
-![ECS bước 1](ecs.1.jpg)
+![ECS bước 4](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.4.jpg)
 
-11. Tạo cluster mới tên `lunchsync-cluster`, chọn hạ tầng **Fargate only**.
+11. Mở cluster `lunchsync-cluster` và xác nhận cluster đang ở trạng thái **Active** với capacity provider Fargate.
 
-![ECS bước 2](ecs.2.jpg)
+![ECS bước 5](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.5.jpg)
 
-12. Nếu cần, cấu hình thêm phần observability, **Container Insights** và **ECS Exec** theo mức theo dõi mong muốn.
+12. Từ ECS, chuyển sang **Task definitions** và bắt đầu tạo task definition mới cho backend.
 
-![ECS bước 3](ecs.3.jpg)
+![ECS bước 6](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.6.jpg)
 
-13. Hoàn tất tạo cluster.
+13. Đặt family là `lunchsync-backend`, chọn **AWS Fargate**, `Linux/X86_64`, `awsvpc`, gán `lunchsync-ecs-task-role` và `lunchsync-ecs-execution-role`.
 
-![ECS bước 4](ecs.4.jpg)
+![Task Definition bước 1](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/td.1.jpg)
 
-14. Mở cluster `lunchsync-cluster` và xác nhận cluster đang ở trạng thái **Active** với capacity provider Fargate.
+14. Thêm container `lunchsync-backend`, dùng image URI từ ECR và mở port `8080`.
 
-![ECS bước 5](ecs.5.jpg)
+![Task Definition bước 2](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/td.2.jpg)
 
-15. Từ ECS, chuyển sang **Task definitions** và bắt đầu tạo task definition mới cho backend.
+15. Khai báo environment variables và secret mapping cho Cognito, chuỗi kết nối database, Redis, `NODE_ENV` và các biến runtime cần thiết khác.
 
-![ECS bước 6](ecs.6.jpg)
+![Task Definition bước 3](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/td.3.jpg)
 
-16. Đặt family là `lunchsync-backend`, chọn **AWS Fargate**, `Linux/X86_64`, `awsvpc`, gán `lunchsync-ecs-task-role` và `lunchsync-ecs-execution-role`.
+16. Cấu hình health check cho container, ví dụ `curl -f http://localhost:8080/health || exit 1`.
 
-![Task Definition bước 1](td.1.jpg)
+![Task Definition bước 4](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/td.4.jpg)
 
-17. Thêm container `lunchsync-backend`, dùng image URI từ ECR và mở port `8080`.
+17. Tạo revision task definition và xác nhận `lunchsync-backend` đã ở trạng thái **ACTIVE**.
 
-![Task Definition bước 2](td.2.jpg)
+![Task Definition bước 5](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/td.5.jpg)
 
-18. Khai báo environment variables và secret mapping cho Cognito, chuỗi kết nối database, Redis, `NODE_ENV` và các biến runtime cần thiết khác.
+18. Quay lại cluster `lunchsync-cluster` và bắt đầu tạo **service** mới dùng task definition vừa tạo.
 
-![Task Definition bước 3](td.3.jpg)
+![ECS bước 7](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.7.jpg)
 
-19. Cấu hình health check cho container, ví dụ `curl -f http://localhost:8080/health || exit 1`.
+19. Đặt service name là `lunchsync-backend-service`, chọn launch type **FARGATE** và task definition family `lunchsync-backend`.
 
-![Task Definition bước 4](td.4.jpg)
+![ECS bước 8](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.8.jpg)
 
-20. Tạo revision task definition và xác nhận `lunchsync-backend` đã ở trạng thái **ACTIVE**.
+20. Cấu hình networking cho service: chọn private subnets trong `lunchsync-vpc`, gắn `backend-sg` và để `Public IP = Off`.
 
-![Task Definition bước 5](td.5.jpg)
+![ECS bước 9](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.9.jpg)
 
-21. Quay lại cluster `lunchsync-cluster` và bắt đầu tạo **service** mới dùng task definition vừa tạo.
+21. Bật load balancing bằng **Application Load Balancer**, dùng ALB hiện có, listener `HTTPS:443` và container `lunchsync-backend:8080`.
 
-![ECS bước 7](ecs.7.jpg)
+![ECS bước 10](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.10.jpg)
 
-22. Đặt service name là `lunchsync-backend-service`, chọn launch type **FARGATE** và task definition family `lunchsync-backend`.
+22. Gắn service với target group `lunchsync-tg-backend`, giữ health check path `/health`, rồi tạo service.
 
-![ECS bước 8](ecs.8.jpg)
+![ECS bước 11](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.11.jpg)
 
-23. Cấu hình networking cho service: chọn private subnets trong `lunchsync-vpc`, gắn `backend-sg` và để `Public IP = Off`.
+23. Sau khi tạo xong, theo dõi rollout ban đầu: service có `2 Desired tasks`, deployment còn **In progress** và target health cần vài phút để ổn định.
 
-![ECS bước 9](ecs.9.jpg)
+![ECS bước 12](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.12.jpg)
 
-24. Bật load balancing bằng **Application Load Balancer**, dùng ALB hiện có, listener `HTTPS:443` và container `lunchsync-backend:8080`.
+24. Nếu muốn tự động scale, cấu hình **Service Auto Scaling** theo CPU utilization.
 
-![ECS bước 10](ecs.10.jpg)
+![ECS bước 13](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.13.jpg)
 
-25. Gắn service với target group `lunchsync-tg-backend`, giữ health check path `/health`, rồi tạo service.
+25. Có thể thêm policy auto scaling thứ hai theo memory utilization.
 
-![ECS bước 11](ecs.11.jpg)
+![ECS bước 14](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.14.jpg)
 
-26. Sau khi tạo xong, theo dõi rollout ban đầu: service có `2 Desired tasks`, deployment còn **In progress** và target health cần vài phút để ổn định.
+26. Ở màn hình cuối, kiểm tra tab **Tasks** để xác nhận task đã chạy; nếu service vẫn báo trạng thái như `Rollback failed` hoặc target health chưa xanh thì cần mở **Events/Logs** để rà lại cấu hình container, secret hoặc health check.
 
-![ECS bước 12](ecs.12.jpg)
-
-27. Nếu muốn tự động scale, cấu hình **Service Auto Scaling** theo CPU utilization.
-
-![ECS bước 13](ecs.13.jpg)
-
-28. Có thể thêm policy auto scaling thứ hai theo memory utilization.
-
-![ECS bước 14](ecs.14.jpg)
-
-29. Ở màn hình cuối, kiểm tra tab **Tasks** để xác nhận task đã chạy; nếu service vẫn báo trạng thái như `Rollback failed` hoặc target health chưa xanh thì cần mở **Events/Logs** để rà lại cấu hình container, secret hoặc health check.
-
-![ECS bước 15](ecs.15.jpg)
+![ECS bước 15](/images/4-Workshop/4.6-ECR-Fargate/4.6.2-ecs/ecs.15.jpg)

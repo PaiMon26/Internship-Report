@@ -17,7 +17,7 @@ chapter: false
 
 &emsp; **Email:** tranthiminhanh2610@gmail.com
 
-&emsp; **University:** FPT University
+&emsp; **University:** FPT University Ho Chi Minh Campus
 
 &emsp; **Major:** Information Assurance
 

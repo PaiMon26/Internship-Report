@@ -17,7 +17,7 @@ chapter: false
 
 &emsp; **Email:** tranthiminhanh2610@gmail.com
 
-&emsp; **Trường:** Đại học FPT
+&emsp; **Trường:** Đại học FPT Thành phố Hồ Chí Minh
 
 &emsp; **Chuyên ngành:** An toàn thông tin
 
